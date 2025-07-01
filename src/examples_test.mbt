@@ -342,7 +342,6 @@ test "mandelbrot set" {
       #|                                        
       #|                                        
       #|                                        
-
     ,
   )
 }
