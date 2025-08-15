@@ -23,7 +23,7 @@ pub(all) enum Horizontal {
 /// # Example
 /// ```moonbit
 /// let box = fill('*', 3, 5)
-/// box.height() // returns 3
+/// inspect(box.height(), content="3")
 /// ```
 pub fn height(self : Box) -> Int {
   self.data.length()
@@ -35,7 +35,7 @@ pub fn height(self : Box) -> Int {
 /// # Example
 /// ```moonbit
 /// let box = fill('*', 3, 5)
-/// box.width() // returns 5
+/// inspect(box.width(), content="5")
 /// ```
 pub fn width(self : Box) -> Int {
   if self.height() == 0 {
@@ -50,7 +50,7 @@ pub fn width(self : Box) -> Int {
 /// # Example
 /// ```moonbit
 /// let box = fill('*', 3, 5)
-/// box.dimensions() // returns (3, 5)
+/// inspect(box.dimensions(), content="(3, 5)")
 /// ```
 pub fn dimensions(self : Box) -> (Int, Int) {
   (self.height(), self.width())
@@ -61,29 +61,19 @@ pub fn dimensions(self : Box) -> (Int, Int) {
 /// # Example
 /// ```moonbit
 /// let box = fill('*', 2, 3)
-/// box.to_string() // returns
-/// ///|
-/// // ***
-/// // ***
-/// ///|
+/// inspect(box.to_string(), content=(
+///   #|***
+///   #|***
+/// ))
 /// ```
-impl Show for Box with to_string(self) {
+pub impl Show for Box with to_string(self) {
   let buf = @buffer.new()
   self.output(buf)
   buf.to_string()
 }
 
 ///| Output a box's content to a logger.
-/// 
-/// # Example
-/// ```moonbit
-/// let box = fill('*', 2, 3)
-/// box.output(logger)
-/// // Logs:
-/// // ***
-/// // ***
-/// ```
-impl Show for Box with output(self, logger) {
+pub impl Show for Box with output(self, logger) {
   logger.write_string(self.data.join("\n"))
 }
 
@@ -97,10 +87,11 @@ impl Show for Box with output(self, logger) {
 /// # Example
 /// ```moonbit
 /// let stars = fill('*', 3, 5)
-/// // Creates:
-/// // *****
-/// // *****
-/// // *****
+/// inspect(stars, content=(
+///   #|*****
+///   #|*****
+///   #|*****
+/// ))
 /// ```
 pub fn fill(c : Char, h : Int, w : Int) -> Box {
   { data: Array::make(h, String::repeat(c.to_string(), w)) }
@@ -111,7 +102,9 @@ pub fn fill(c : Char, h : Int, w : Int) -> Box {
 /// # Example
 /// ```moonbit
 /// let star = singleton('*')
-/// // Creates a single '*'
+/// inspect(star, content=(
+///   #|*
+/// ))
 /// ```
 pub fn singleton(c : Char) -> Box {
   fill(c, 1, 1)
