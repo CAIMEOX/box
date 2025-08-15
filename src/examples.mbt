@@ -8,7 +8,7 @@ test "sierpinski" {
 
   inspect(
     sierpinski(5).to_string(),
-    content=
+    content=(
       #|                               *                               
       #|                              * *                              
       #|                             *   *                             
@@ -41,7 +41,7 @@ test "sierpinski" {
       #|  * *     * *     * *     * *     * *     * *     * *     * *  
       #| *   *   *   *   *   *   *   *   *   *   *   *   *   *   *   * 
       #|* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    ,
+    ),
   )
 }
 
@@ -68,7 +68,7 @@ test "spiral" {
 
   inspect(
     spiral(10),
-    content=
+    content=(
       #|| +-------------------------------------+
       #|| | +---------------------------------+ |
       #|| | | +-----------------------------+ | |
@@ -90,7 +90,7 @@ test "spiral" {
       #|| | +-------------------------------+ | |
       #|| +-----------------------------------+ |
       #|+---------------------------------------+
-    ,
+    ),
   )
 }
 
@@ -110,22 +110,22 @@ test "binary tree" {
 
   inspect(
     binary_tree(3),
-    content=
+    content=(
       #|              *              
       #|      *               *      
       #|  *       *       *       *  
       #|*   *   *   *   *   *   *   *
-    ,
+    ),
   )
   inspect(
     binary_tree(4),
-    content=
+    content=(
       #|                              *                              
       #|              *                               *              
       #|      *               *               *               *      
       #|  *       *       *       *       *       *       *       *  
       #|*   *   *   *   *   *   *   *   *   *   *   *   *   *   *   *
-    ,
+    ),
   )
 }
 
@@ -156,7 +156,7 @@ test "diamond" {
 
   inspect(
     diamond(3),
-    content=
+    content=(
       #|   *   
       #|  ***  
       #| ***** 
@@ -164,11 +164,11 @@ test "diamond" {
       #| ***** 
       #|  ***  
       #|   *   
-    ,
+    ),
   )
   inspect(
     diamond(8),
-    content=
+    content=(
       #|        *        
       #|       ***       
       #|      *****      
@@ -186,7 +186,7 @@ test "diamond" {
       #|      *****      
       #|       ***       
       #|        *        
-    ,
+    ),
   )
 }
 
@@ -205,7 +205,7 @@ test "bar chart" {
 
   inspect(
     bar_chart([10, 20, 30, 40, 20]),
-    content=
+    content=(
       #|         ███   
       #|         ███   
       #|         ███   
@@ -218,7 +218,7 @@ test "bar chart" {
       #|███████████████
       #|███████████████
       #|10 20 30 40 20 
-    ,
+    ),
   )
 }
 
@@ -244,7 +244,7 @@ test "square spiral" {
 
   inspect(
     square_spiral(9),
-    content=
+    content=(
       #|┌─────────────────┐
       #|│┌───────────────┐│
       #|││┌─────────────┐││
@@ -264,7 +264,7 @@ test "square spiral" {
       #|││└─────────────┘││
       #|│└───────────────┘│
       #|└─────────────────┘
-    ,
+    ),
   )
 }
 
@@ -311,7 +311,7 @@ test "mandelbrot set" {
 
   inspect(
     mandelbrot(50, 40),
-    content=
+    content=(
       #|                                        
       #|                                        
       #|                                        
@@ -342,8 +342,7 @@ test "mandelbrot set" {
       #|                                        
       #|                                        
       #|                                        
-
-    ,
+    ),
   )
 }
 
@@ -354,7 +353,7 @@ test "julia set" {
     zy : Double,
     cx : Double,
     cy : Double,
-    max_iter : Int
+    max_iter : Int,
   ) -> Char {
     let mut x = zx
     let mut y = zy
@@ -399,7 +398,7 @@ test "julia set" {
 
   inspect(
     julia_set(30, 15, -0.7, 0.27015),
-    content=
+    content=(
       #|                              
       #|                              
       #|                              
@@ -415,7 +414,7 @@ test "julia set" {
       #|                              
       #|                              
       #|                              
-    ,
+    ),
   )
 }
 
@@ -445,7 +444,7 @@ test "cantor set" {
 
   inspect(
     cantor_dust(4),
-    content=
+    content=(
       #|█████████████████████████████████████████████████████████████████████████████████
       #|                                                                                 
       #|███████████████████████████                           ███████████████████████████
@@ -456,7 +455,7 @@ test "cantor set" {
       #|                                                                                 
       #|█ █   █ █         █ █   █ █                           █ █   █ █         █ █   █ █
       #|                                                                                 
-    ,
+    ),
   )
 }
 
@@ -478,7 +477,7 @@ test "tree fractal" {
 
   inspect(
     tree_fractal(4, 8, 30),
-    content=
+    content=(
       #|                      |                       
       #|                      |                       
       #|                      |                       
@@ -499,6 +498,6 @@ test "tree fractal" {
       #| |     |     |     |     |     |     |     |  
       #||  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
       #|                                              
-    ,
+    ),
   )
 }
