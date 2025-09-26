@@ -67,7 +67,7 @@ pub fn dimensions(self : Box) -> (Int, Int) {
 /// // ***
 /// ///|
 /// ```
-impl Show for Box with to_string(self) {
+pub impl Show for Box with to_string(self) {
   let buf = @buffer.new()
   self.output(buf)
   buf.to_string()
@@ -83,7 +83,7 @@ impl Show for Box with to_string(self) {
 /// // ***
 /// // ***
 /// ```
-impl Show for Box with output(self, logger) {
+pub impl Show for Box with output(self, logger) {
   logger.write_string(self.data.join("\n"))
 }
 

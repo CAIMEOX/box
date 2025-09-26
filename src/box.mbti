@@ -25,6 +25,7 @@ fn Box::height(Self) -> Int
 fn Box::heighten(Self, Int, align~ : Vertical = ..) -> Self
 fn Box::widen(Self, Int, align~ : Horizontal = ..) -> Self
 fn Box::width(Self) -> Int
+impl Show for Box
 
 pub(all) enum Horizontal {
   Left
