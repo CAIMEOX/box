@@ -1,3 +1,4 @@
+// Generated using `moon info`, DON'T EDIT IT
 package "CAIMEOX/box"
 
 // Values
@@ -7,23 +8,25 @@ fn fill(Char, Int, Int) -> Box
 
 fn grid(Array[Array[Box]]) -> Box
 
-fn hconcat(Array[Box], align~ : Vertical = ..) -> Box
+fn hconcat(Array[Box], align? : Vertical) -> Box
 
 fn singleton(Char) -> Box
 
 fn space(Int, Int) -> Box
 
-fn vconcat(Array[Box], align~ : Horizontal = ..) -> Box
+fn vconcat(Array[Box], align? : Horizontal) -> Box
+
+// Errors
 
 // Types and methods
 type Box
-fn Box::above(Self, Self, align~ : Horizontal = ..) -> Self
-fn Box::beside(Self, Self, align~ : Vertical = ..) -> Self
+fn Box::above(Self, Self, align? : Horizontal) -> Self
+fn Box::beside(Self, Self, align? : Vertical) -> Self
 fn Box::dimensions(Self) -> (Int, Int)
 fn Box::framed(Self) -> Self
 fn Box::height(Self) -> Int
-fn Box::heighten(Self, Int, align~ : Vertical = ..) -> Self
-fn Box::widen(Self, Int, align~ : Horizontal = ..) -> Self
+fn Box::heighten(Self, Int, align? : Vertical) -> Self
+fn Box::widen(Self, Int, align? : Horizontal) -> Self
 fn Box::width(Self) -> Int
 impl Show for Box
 
